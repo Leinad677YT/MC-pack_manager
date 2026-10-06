@@ -1,0 +1,27 @@
+{
+    "height": 64,
+    "has_ceiling": false,
+    "ambient_light": 0,
+    "coordinate_scale": 1,
+    "has_ender_dragon_fight": false,
+    "has_skylight": false,
+    "infiniburn": [],
+    "logical_height": 0,
+    "min_y": 0,
+    "monster_spawn_block_light_limit": 0,
+    "monster_spawn_light_level": 0,
+    "attributes": {
+        "minecraft:gameplay/natural_mob_spawns": {
+            "argument": {
+                "spawn_costs": {},
+                "spawns_by_category": {}
+            },
+            "modifier": "override"
+        }
+    },
+    "cardinal_light": "default",
+    "default_clock": "minecraft:overworld",
+    "has_fixed_time": true,
+    "skybox":"none",
+    "timelines": []
+}

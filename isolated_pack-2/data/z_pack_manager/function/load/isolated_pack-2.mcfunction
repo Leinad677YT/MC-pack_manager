@@ -1,0 +1,1 @@
+tellraw @a[tag=pack_manager.admin] [{text:"- ",color:"#5b0d0d"},{text:"isolated_pack-2 loaded from vanilla"}]

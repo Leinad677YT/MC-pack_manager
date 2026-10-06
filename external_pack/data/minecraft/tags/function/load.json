@@ -1,0 +1,8 @@
+{
+    "values": [
+        {
+            "id": "external:load",
+            "required": false
+        }
+    ]
+}

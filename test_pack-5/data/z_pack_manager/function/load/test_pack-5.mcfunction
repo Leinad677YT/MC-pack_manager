@@ -1,0 +1,1 @@
+tellraw @a[tag=pack_manager.admin] [{text:"- ",color:"#5b0d0d"},{text:"test_pack-5 loaded from vanilla"}]

@@ -1,0 +1,15 @@
+{
+    "pack": {
+        "description": [{"translate": "leinad.pack_manager.description", "fallback":"Sorts all installed packs to ensure that dependencies are supplied", "color":"#00fff7"}],
+        "min_format": 121,
+        "max_format": 121
+    },
+    "filter": {
+        "block": [
+            {
+                "namespace": "z_pack_manager",
+                "path": "function/load/.*"
+            }
+        ]
+    }
+}

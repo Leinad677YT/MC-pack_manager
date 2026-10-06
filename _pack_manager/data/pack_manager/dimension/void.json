@@ -1,0 +1,13 @@
+{
+    "type": "pack_manager:void",
+    "generator": {
+        "type": "flat",
+        "settings": {
+            "layers": [],
+            "biome": "minecraft:the_void",
+            "features": false,
+            "lakes": false,
+            "structure_overrides": []
+        }
+    }
+}
