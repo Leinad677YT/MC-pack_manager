@@ -1,0 +1,6 @@
+{
+    "values": [
+        "z_pack_manager:version/required_pack/minor"
+    ],
+    "replace": true
+}

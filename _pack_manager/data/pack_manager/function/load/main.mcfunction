@@ -11,16 +11,27 @@
 ##
 
 ## GET DISABLED PACKS
-    execute in pack_manager:void unless score #pack_manager.load pack_manager.data matches 6.. unless function pack_manager:load/get_disabled run return run schedule function pack_manager:load/main 1t
+    execute in pack_manager:void unless score #pack_manager.load pack_manager.data matches 3.. unless function pack_manager:load/get_disabled run return run schedule function pack_manager:load/main 1t
 ##
 
-## DISABLE CMDBLOCK
-    execute in pack_manager:void run data modify block 0 1 0 powered set value false
-    execute in pack_manager:void run data modify block 0 1 0 auto set value false
+## CONTINUE ITERATION
+    scoreboard players add #pack_manager.load pack_manager.data 1
+##
+
+## IF PACK MANAGER IS NOT LAST FORCE IT
+    data modify storage pack_manager:data temp.last set from storage pack_manager:data enabled_datapacks[-1]
+    scoreboard players set #pack_manager.reposition pack_manager.data 1
+    execute \
+        unless data storage pack_manager:data temp{last:'"file/_pack_manager"'} \
+        unless data storage pack_manager:data temp{last:'"file/_pack_manager.zip"'} \
+            run scoreboard players set #pack_manager.reposition pack_manager.data 0
+    execute if score #pack_manager.load pack_manager.data matches 4 if score #pack_manager.reposition pack_manager.data matches 0 run return run function pack_manager:load/force_self
+    execute if score #pack_manager.load pack_manager.data matches 4 run tellraw @a[tag=pack_manager.admin] [{text:"[+] ",color:"#22bb46"},{translate:"leinad.pack_manager.previous_last_pack.tellraw",fallback:"Current last loaded pack is %1$s",with:[{storage:"pack_manager:data",nbt:"temp.last",interpret:false,color:"white"}],color:"#22ff47"}]
 ##
 
 ## SATISFY DEPENDENCIES
     function #z_pack_manager:get_pack_info
+    data modify storage pack_manager:data pack_info set from storage pack_manager:user pack_info
     execute if data storage pack_manager:user pack_info[0] run function pack_manager:control/main_loop with storage pack_manager:user pack_info[-1]
 ##
 
@@ -50,3 +61,7 @@
     data remove storage pack_manager:data temp
 ##
 
+## DISABLE CMDBLOCK
+    execute in pack_manager:void run setblock 0 0 0 air
+    execute in pack_manager:void run setblock 0 1 0 air
+##
