@@ -12,7 +12,7 @@ This repository aims to provide with a standard protocol for inter-datapack coop
 The information below describes only the protocol for version detection and pack manager behaviour, the specifics of the implementation will be defined inside the README of the manager itself.
 
 > [!NOTE]
-> Most pack examples and the pack manager itself are still being implemented, but `_pack_manager`, `external_pack`, `required_pack` and `test_pack-1` are already prepared for testing out the protocol.
+> Pack examples are prepared for the intended functionalities of the pack manager already, but it cannot sort packs yet
 
 
 ## Protocol specification
