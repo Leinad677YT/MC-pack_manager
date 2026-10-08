@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:all_of",
+    "terms": [
+        {
+            "type": "minecraft:int_value_check",
+            "value": {
+                "type": "minecraft:max",
+                "inputs": "#z_pack_manager:version/required_pack/major"
+            },
+            "test": 1
+        },
+        {
+            "type": "minecraft:int_value_check",
+            "value": {
+                "type": "minecraft:max",
+                "inputs": "#z_pack_manager:version/required_pack/minor"
+            },
+            "test": 0
+        },
+        {
+            "type": "minecraft:int_value_check",
+            "value": {
+                "type": "minecraft:max",
+                "inputs": "#z_pack_manager:version/required_pack/patch"
+            },
+            "test": 0
+        }
+    ]
+}
