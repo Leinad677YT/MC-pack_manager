@@ -96,6 +96,39 @@ At `#z_pack_manager:version/<pack_id>/patch`:
 ```
 
 
+### Showing your pack's presence without versioning
+
+To make things faster and more standard, you should add a quick way to check if your pack is loaded without needing versions. For this, we'll follow smitheds convention by just adding a `installed` predicate.
+
+To do this, your pack should contain the following predicate and predicate tag:
+
+`z_pack_manager:installed/<pack_id>`:
+```json
+{
+ "type": "minecraft:random_chance",
+ "chance": 1
+}
+```
+
+`#z_pack_manager:installed/<pack_id>`:
+```json
+{
+  "values": [
+    "z_pack_manager:installed/<pack_id>"
+  ]
+}
+```
+
+The tag, should be added as empty on the packs that need to check if the pack is installed, and the checks would look like the following predicate:
+
+`my_ns:is_the_other_pack_installed`:
+```json
+{
+  "type": "minecraft:any_of",
+  "terms": "#z_pack_manager:installed/<pack_id>"
+}
+```
+
 #### Dependencies and pack manager support
 
 ##### **`requires[]`**
